@@ -1,0 +1,68 @@
+.add-book {
+    .add{
+    	margin: 10px 16px 10px 8px;
+
+    	.label[floating] {
+		    font-family: Montserrat-Light;
+		    font-size: 15px;
+		    color: #666;
+		}
+
+		.item-md ion-icon[item-left]+.item-inner {
+		    margin-left: 0;
+		}
+		.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+		    border-bottom-color: #f2f2f2;
+		    box-shadow: none;
+		}
+		.item-md.item-input.input-has-focus .item-inner {
+		    box-shadow: none;
+		    border-bottom-color: #f2f2f2;
+		}
+		.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+		    border-bottom-color: #f2f2f2;
+		    box-shadow: none;
+		}
+
+		h3{
+			font-size: 15px;
+			color: #666;
+			margin: 16px 10px 16px 16px;
+		}
+
+		ion-select {
+		    max-width: 96%;
+		    width: 96%;
+		    padding: 13px 8px 13px 8px;
+		}
+
+		.text-input-md{
+			margin-left: 8px;
+		}
+
+	}
+
+	.base64Image{
+	    img{
+	        height: 110px;
+	        width: 110px;
+	        border-radius: 50%;
+	        margin: 20px auto 20px auto;
+	        display: block;   
+	    }
+	}
+    
+    .submit-button{
+        margin: 16px 16px;
+		.button{
+			height:45px;
+			margin: 0;
+		}
+	}
+
+	.scroll-content {
+        margin-bottom: 0px !important;
+        padding-bottom: 50px;
+    }
+
+}

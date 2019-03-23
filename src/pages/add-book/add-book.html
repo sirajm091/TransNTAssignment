@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>
+      Add book
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="add-book">
+
+	<div class="base64Image">
+        <img *ngIf="!form.base64Image" src="assets/images/book.jpg">
+        <img *ngIf="form.base64Image" src="{{form.base64Image}}">
+    </div>
+    
+    <button ion-button full clear (click)="photo()"><ion-icon name="ios-camera-outline" style="font-size: 40px;"></ion-icon></button>
+
+	<div class="add">
+		<h3>Select category</h3>
+		<ion-item>
+		    <ion-select placeholder="Choose" [(ngModel)]="form.category" cancelText="Cancel" okText="Ok">
+			    <ion-label>Category</ion-label>
+			    <ion-option value="fiction">Fiction</ion-option>
+			    <ion-option value="literature">Literature</ion-option>
+			    <ion-option value="music">Music</ion-option>
+			    <ion-option value="scifi">Sci-fi</ion-option>
+			    <ion-option value="history">History</ion-option>
+			    <ion-option value="biography">Biography</ion-option>
+			 </ion-select>
+		</ion-item>
+
+		<ion-item>
+	      <ion-label floating>Book name</ion-label>
+	      <ion-input type="text" [(ngModel)]="form.book_name" name="book_name">
+	      </ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label floating>Author</ion-label>
+	      <ion-input type="text" [(ngModel)]="form.author" name="author">
+	      </ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label floating>ISBN Number</ion-label>
+	      <ion-input type="number" [(ngModel)]="form.isbn" name="isbn">
+	      </ion-input>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label floating>Date of publish</ion-label>
+	      <ion-datetime displayFormat="DD/MM/YYYY" max="{{max_date}}" [(ngModel)]="form.publish" name="publish"></ion-datetime>
+	    </ion-item>
+
+	    <ion-item>
+	      <ion-label floating>Added date</ion-label>
+	      <ion-datetime displayFormat="DD/MM/YYYY" max="{{max_date}}" [(ngModel)]="form.added_date" name="added_date" readonly></ion-datetime>
+	    </ion-item>
+	</div>
+
+	<div class="submit-button">
+		<button ion-button block color="header" (click)="addBook()" [disabled]="disableSubmit"> ADD</button>
+	</div>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="spinner" *ngIf="!service?.allBooks"><ion-spinner name="bubbles"> </ion-spinner></div>
+  <div class="all-books" *ngIf="service?.allBooks && booksCount != 0">
+  	<ion-row>
+      <ion-col *ngFor="let item of service.allBooks">
+        	 <ion-card>
+              <ion-avatar item-start>
+          	     <img src="{{item.image}}" (click)="gotoBook(item)">
+              </ion-avatar>
+          	 	<h1 (click)="gotoBook(item)">{{item.bookname}}</h1>
+          	 	<h2>By <strong>{{item.author}}</strong></h2>
+          	 	<h2><span>ISBN : </span>{{item.isbn}}</h2>
+          	 	<h2 text-capitalize><span>Category : </span> {{item.category}}</h2>
+              <h4 text-capitalize> <ion-icon name="ios-create"></ion-icon> {{item.publishDate}}</h4>
+          	 	<button ion-button clear (click)="location(item.lattitude, item.longitude)"><ion-icon name="md-locate"></ion-icon> Location</button>
+        	 </ion-card>
+    	</ion-col>
+    </ion-row>
+  </div>
+  <div *ngIf="booksCount == 0" class="empty">
+  		<h3>No books found ! </h3>
+  </div>
+  <ion-fab right bottom *ngIf="auth.role == 'Admin'" (click)="addBooks()">
+   <button ion-fab color="header" mini><ion-icon name="md-add"></ion-icon></button>
+ </ion-fab>
+</ion-content>

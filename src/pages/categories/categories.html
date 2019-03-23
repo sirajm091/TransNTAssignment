@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="header">
+    <ion-title>
+      Categories
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="categories">
+    <h1>Choose your favourite category below !</h1>
+    <ion-row>
+      <ion-col (click)="getBooks('fiction')">
+        <img src="assets/images/fiction.png">
+        <h2>Fiction</h2>
+      </ion-col>
+      <ion-col (click)="getBooks('literature')">
+        <img src="assets/images/liter.png">
+        <h2>Literature</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="getBooks('music')">
+        <img src="assets/images/music.png">
+        <h2>Music</h2>
+      </ion-col>
+      <ion-col (click)="getBooks('scifi')">
+        <img src="assets/images/scifi.png">
+        <h2>Sci-fi</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col (click)="getBooks('history')">
+        <img src="assets/images/history.png">
+        <h2>History</h2>
+      </ion-col>
+      <ion-col (click)="getBooks('biography')">
+        <img src="assets/images/bio.png">
+        <h2>Biography</h2>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

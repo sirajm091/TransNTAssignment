@@ -1,0 +1,41 @@
+<ion-header no-border>
+    <ion-navbar>
+        <button ion-button menuToggle style="color: white;">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="register-page">
+    <div class="info">
+        <h1 text-uppercase>LOGO</h1>
+        <h2>Tag Line Goes Here!</h2>
+    </div>
+    <form #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.firstname" name="firstname" placeholder="First Name"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="text" [(ngModel)]="form.lastname" name="lastname" placeholder="Last Name"></ion-input>
+            </ion-item>
+           <ion-item>
+                <ion-input type="email" [(ngModel)]="form.email" name="Email" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="password" [(ngModel)]="form.password" name="password" placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="password" [(ngModel)]="form.confirm_password" name="password" placeholder="Confirm Password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="tel" maxlength="10" [(ngModel)]="form.phone" name="phone" placeholder="Phone"></ion-input>
+            </ion-item>
+        </ion-list>
+    </form>
+
+    <div class="signup-button"> 
+        <button ion-button outline full type="submit" text-uppercase [disabled]="disableRegister" (click)="register()">Register <ion-spinner style="color:#fff" name="bubbles" *ngIf="disableRegister"></ion-spinner></button>
+    </div>
+
+</ion-content>
